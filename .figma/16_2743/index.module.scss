@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.frame2 {
+  display: flex;
+  align-items: flex-start;
+  border-radius: 10px;
+  padding-right: 30px;
+  width: 380px;
+  height: 65px;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, #044886 0%, #185182 49.52%);
+
+  .rectangle16 {
+    display: flex;
+    align-items: flex-start;
+    background: #06a56f;
+    padding: 18px 32px 116px 18px;
+
+    .oportunidadesVisuali {
+      width: 140px;
+      height: 29px;
+      text-align: center;
+      letter-spacing: 0;
+      color: #ffffff;
+      font-family: Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 8px;
+      font-weight: 600;
+    }
+  }
+
+  .oportunidadesInscrit {
+    margin: 19px 0px 0px 20px;
+    width: 140px;
+    text-align: center;
+    letter-spacing: 0;
+    color: #ffffff;
+    font-family: Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+  }
+}
