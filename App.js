@@ -1,9 +1,7 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home, Search, Bookmark, User } from 'lucide-react-native';
-import { TouchableOpacity } from 'react-native';
 
 import { AppProvider } from './src/context/AppContext';
 
@@ -35,36 +33,36 @@ function TabNavigator() {
         }
       }}
     >
-      <Tab.Screen 
-        name="Home" 
-        component={HomeScreen} 
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Home color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen 
-        name="Buscar" 
-        component={SearchScreen} 
+      <Tab.Screen
+        name="Buscar"
+        component={SearchScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Search color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen 
-        name="Salvos" 
-        component={SavedScreen} 
+      <Tab.Screen
+        name="Salvos"
+        component={SavedScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Bookmark color={color} size={size} />
           ),
         }}
       />
-      <Tab.Screen 
-        name="Perfil" 
-        component={ProfileScreen} 
+      <Tab.Screen
+        name="Perfil"
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <User color={color} size={size} />

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 import { opportunities as initialOpportunities, userProfile as initialUserProfile } from '../data/mockData';
 
 const AppContext = createContext();
@@ -8,8 +8,8 @@ export function AppProvider({ children }) {
   const [userProfile, setUserProfile] = useState(initialUserProfile);
 
   const toggleSave = (id) => {
-    setOpportunities(prev => 
-      prev.map(item => 
+    setOpportunities(prev =>
+      prev.map(item =>
         item.id === id ? { ...item, isSaved: !item.isSaved } : item
       )
     );
@@ -21,7 +21,6 @@ export function AppProvider({ children }) {
         if (item.id === id) {
           const isNowEnrolled = !item.isEnrolled;
           
-          // Update user profile stats
           setUserProfile(profile => ({
             ...profile,
             enrollments: profile.enrollments + (isNowEnrolled ? 1 : -1)

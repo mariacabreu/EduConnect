@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TextInput, SafeAreaView } from 'react-native';
 import { Search } from 'lucide-react-native';
 import Card from '../components/Card';
@@ -9,10 +9,10 @@ export default function SearchScreen({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredData = opportunities.filter(item => {
-    if (!searchQuery) return false; // Show nothing if search is empty
-    return item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-           item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-           item.institution.toLowerCase().includes(searchQuery.toLowerCase());
+    if (!searchQuery) return false;
+    return item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.institution.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
   const handlePressCard = (item) => {
@@ -25,7 +25,7 @@ export default function SearchScreen({ navigation }) {
       <View style={styles.header}>
         <View style={styles.searchContainer}>
           <Search color="#00ad6c" size={20} />
-          <TextInput 
+          <TextInput
             style={styles.searchInput}
             placeholder="Buscar cursos, vagas, eventos..."
             value={searchQuery}
@@ -45,12 +45,12 @@ export default function SearchScreen({ navigation }) {
           <Text style={styles.emptyStateText}>Nenhum resultado encontrado para "{searchQuery}"</Text>
         </View>
       ) : (
-        <FlatList 
+        <FlatList
           data={filteredData}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <Card 
-              item={item} 
+            <Card
+              item={item}
               onPress={() => handlePressCard(item)}
             />
           )}

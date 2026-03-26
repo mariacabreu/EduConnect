@@ -1,13 +1,10 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
 import { useAppContext } from '../context/AppContext';
 
 export default function DetailsScreen({ route, navigation }) {
   const { item: initialItem } = route.params;
   const { opportunities, toggleSave, toggleEnroll } = useAppContext();
-
-  // Find the current item from context to ensure it has latest state
   const item = opportunities.find(o => o.id === initialItem.id) || initialItem;
 
   return (
